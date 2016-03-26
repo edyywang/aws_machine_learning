@@ -11,22 +11,10 @@ require 'base64'
 class AwsMachineLearning
 
   Dotenv.load
-  SERVICE_ACCOUNT_EMAIL = ENV['SERVICE_ACCOUNT_EMAIL']
-  SERVICE_ACCOUNT_KEY = ENV['SERVICE_ACCOUNT_KEY']
-  BROWSER_API_KEY = ENV['BROWSER_API_KEY']
-  REQUEST_FILE_NAME = 'request.txt'
-  FILE_FOLDER = 'images/'
+  MACHINE_LEARNING_ACCESS_KEY = ENV['MACHINE_LEARNING_ACCESS_KEY']
+  MACHINE_LEARNING_SECRET_KEY = ENV['MACHINE_LEARNING_SECRET_KEY']
 
-  TYPE_UNSPECIFIED = 'TYPE_UNSPECIFIED'	# Unspecified feature type.
-  FACE_DETECTION = 'FACE_DETECTION'	# Run face detection.
-  LANDMARK_DETECTION = 'LANDMARK_DETECTION'	# Run landmark detection.
-  LOGO_DETECTION = 'LOGO_DETECTION'	# Run logo detection.
-  LABEL_DETECTION = 'LABEL_DETECTION'	# Run label detection.
-  TEXT_DETECTION = 'TEXT_DETECTION'	# Run OCR.
-  SAFE_SEARCH_DETECTION = 'SAFE_SEARCH_DETECTION'	# Run various computer vision models to compute image safe-search properties.
-  IMAGE_PROPERTIES = 'IMAGE_PROPERTIES'	# Compute a set of properties about the image (such as the image's dominant colors).
-
-  def initialize(type = LABEL_DETECTION)
+  def initialize
     @type = type
   end
 
